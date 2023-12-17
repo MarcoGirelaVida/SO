@@ -66,6 +66,7 @@ int funcion_proxy()
 
     // [ activo cerrojo del stdout ]
     // Leo del fifo anonimo local y printeo en la pantalla
+    // alternativa: hacer un mapeo de memoria y printear el buffer de golpe
     while (bytes_leidos = read(fd[0], tmp, TAM_MENSAJES_RW))
     {
         if (bytes_leidos == -1)
