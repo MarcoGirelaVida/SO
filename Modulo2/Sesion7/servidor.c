@@ -91,7 +91,7 @@ int funcion_proxy()
 void handler(int sig_num)
 {
     struct siginfo_t infop;
-    int waitid(P_ALL, 0, &infop, WEXITED);
+    while (waitid(P_ALL, 0, &infop, WNOHANG) != -1);
 }
 int main()
 {
